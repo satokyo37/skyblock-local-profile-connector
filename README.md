@@ -4,6 +4,10 @@ Hypixel Public APIから、自分のSkyBlockプロフィールを必要なとき
 
 Hypixel, Inc.とは提携・協賛関係にありません。利用時は[Hypixel API Policy](https://developer.hypixel.net/policies/)に従ってください。
 
+## For Hypixel API reviewers
+
+This is a working, local-only, read-only utility for the developer's own SkyBlock profile. It makes an authenticated profile request only when the developer manually runs `fetch`; it does not continuously poll players, provide session tracking, or retain profile history. The API key stays in Windows Credential Manager and is never written to source code, configuration JSON, snapshots, or logs. Static Resources API responses are cached for 24 hours.
+
 ## 特徴
 
 - 管理画面、サーバー、常駐処理はありません。
@@ -102,4 +106,3 @@ py -m unittest -v
 ## ライセンス
 
 [MIT License](LICENSE)
-
