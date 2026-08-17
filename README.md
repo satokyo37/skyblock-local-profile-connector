@@ -15,6 +15,7 @@ This is a working, local-only, read-only utility for the developer's own SkyBloc
 - 管理画面、サーバー、常駐処理はありません。
 - APIキーはWindows資格情報マネージャーへ保存します。
 - APIキーをソースコード、設定JSON、スナップショット、標準出力へ書き出しません。
+- APIキーを平文で保存する`.env`ファイルは使用しません。
 - プロフィールは手動で`fetch`したときだけ取得します。
 - プレイ履歴は蓄積せず、最新の整形済みスナップショット1件だけを上書きします。
 - Hypixel APIレスポンスの生データは保存しません。
@@ -41,13 +42,15 @@ SkyBlockのインベントリデータはbase64・gzip圧縮NBTとして返さ�
 
 ### 1. APIキーを保存
 
-`キーを登録.cmd`をダブルクリックするか、次を実行します。
+`setup-key.cmd`をダブルクリックするか、次を実行します。
 
 ```powershell
 py skyblock_connector.py setup-key
 ```
 
 APIキーを2回入力します。入力内容は画面に表示されません。キーはチャット、GitHub、Webサイト、公開MODへ貼り付けないでください。
+
+`.env`は通常のテキストファイルであり、誤ってGitやバックアップへ含める危険があるため使用しません。APIキーはWindows資格情報マネージャー内に保存し、実行時だけOS経由で読み出します。
 
 ### 2. 取得対象を保存
 

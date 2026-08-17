@@ -15,6 +15,7 @@ This is a working, local-only, read-only utility for the developer's own SkyBloc
 - No management interface, web server, or background process.
 - Stores the API key in Windows Credential Manager.
 - Never writes the API key to source code, configuration JSON, snapshots, or standard output.
+- Does not store the API key in a plaintext `.env` file.
 - Retrieves the profile only when `fetch` is run manually.
 - Does not retain profile history; it overwrites a single latest snapshot.
 - Does not save raw Hypixel API responses.
@@ -41,13 +42,15 @@ SkyBlock inventory data is returned as base64-encoded, gzip-compressed NBT. The 
 
 ### 1. Store the API key
 
-Double-click `キーを登録.cmd`, or run:
+Double-click `setup-key.cmd`, or run:
 
 ```powershell
 py skyblock_connector.py setup-key
 ```
 
 Enter the API key twice. The input is hidden. Do not paste the key into chats, GitHub, websites, or public mods.
+
+The connector deliberately avoids `.env` because it is a plaintext file that can be accidentally committed or included in backups. The key remains in Windows Credential Manager and is retrieved through the operating system only when needed.
 
 ### 2. Store the target profile locally
 
