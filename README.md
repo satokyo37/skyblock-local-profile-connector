@@ -1,5 +1,7 @@
 # SkyBlock Local Profile Connector
 
+[English README](README.en.md)
+
 Hypixel Public APIから、自分のSkyBlockプロフィールを必要なときだけ取得するWindows向けローカルツールです。取得結果をJSONへ整形し、ローカルのAIアシスタントや個人用スクリプトから解析しやすくします。
 
 Hypixel, Inc.とは提携・協賛関係にありません。利用時は[Hypixel API Policy](https://developer.hypixel.net/policies/)に従ってください。
@@ -102,7 +104,3 @@ py -m unittest -v
 ```
 
 テスト用NBTは架空のプロフィールとUUIDだけを使用します。実APIキーや実プロフィールデータは含みません。
-
-## ライセンス
-
-[MIT License](LICENSE)
